@@ -8,4 +8,5 @@ cd dump1090
 
 make BLADERF=no HACKRF=no LIMESDR=no
 
-pause
+echo "Done!"
+read
