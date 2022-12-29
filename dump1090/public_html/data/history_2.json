@@ -1,8 +1,0 @@
-{ "now" : 1672303226.3,
-  "messages" : 297,
-  "aircraft" : [
-    {"hex":"ac90f3","mlat":[],"tisb":[],"messages":8,"seen":7.7,"rssi":-11.3},
-    {"hex":"a96171","flight":"DAL1123 ","alt_baro":37000,"alt_geom":37475,"gs":512.7,"track":78.9,"baro_rate":0,"squawk":"6772","emergency":"none","category":"A4","nav_qnh":1013.6,"nav_altitude_mcp":36992,"nav_heading":84.4,"lat":41.553360,"lon":-91.796140,"nic":8,"rc":186,"seen_pos":13.2,"version":2,"nic_baro":1,"nac_p":10,"nac_v":2,"sil":3,"sil_type":"perhour","gva":2,"sda":2,"mlat":[],"tisb":[],"messages":101,"seen":0.3,"rssi":-2.4},
-    {"hex":"a37020","flight":"UPS980  ","alt_baro":36025,"alt_geom":36550,"gs":435.6,"track":299.3,"baro_rate":64,"squawk":"6630","emergency":"none","category":"A5","nav_qnh":1012.8,"nav_altitude_mcp":36000,"nav_heading":291.1,"nav_modes":["vnav","tcas"],"lat":41.651730,"lon":-91.926312,"nic":8,"rc":186,"seen_pos":1.9,"version":2,"nic_baro":1,"nac_p":10,"nac_v":1,"sil":3,"sil_type":"perhour","gva":2,"sda":2,"mlat":[],"tisb":[],"messages":188,"seen":0.1,"rssi":-5.0}
-  ]
-}

@@ -1,9 +1,0 @@
-{ "now" : 1672303458.9,
-  "messages" : 1661,
-  "aircraft" : [
-    {"hex":"a898a9","mlat":[],"tisb":[],"messages":7,"seen":0.6,"rssi":-14.8},
-    {"hex":"ac90f3","version":0,"sil_type":"unknown","mlat":[],"tisb":[],"messages":99,"seen":4.6,"rssi":-11.2},
-    {"hex":"a96171","flight":"DAL1123 ","alt_baro":37000,"alt_geom":37525,"gs":509.7,"track":79.4,"baro_rate":0,"squawk":"6772","emergency":"none","category":"A4","nav_qnh":1013.6,"nav_altitude_mcp":36992,"nav_heading":84.4,"lat":41.660660,"lon":-91.051566,"nic":8,"rc":186,"seen_pos":5.8,"version":2,"nic_baro":1,"nac_p":10,"nac_v":2,"sil":3,"sil_type":"perhour","gva":2,"sda":2,"mlat":[],"tisb":[],"messages":1011,"seen":3.3,"rssi":-8.2},
-    {"hex":"a37020","alt_baro":36000,"category":"A5","version":2,"sil_type":"perhour","mlat":[],"tisb":[],"messages":543,"seen":28.5,"rssi":-12.0}
-  ]
-}
