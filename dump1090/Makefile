@@ -2,7 +2,7 @@ PROGNAME=dump1090
 
 DUMP1090_VERSION ?= unknown
 
-CFLAGS ?= -O3 -g
+CFLAGS ?= -O3
 DUMP1090_CFLAGS := -std=c11 -fno-common -Wall -Wmissing-declarations -Werror -W
 DUMP1090_CPPFLAGS := -I. -D_POSIX_C_SOURCE=200112L -DMODES_DUMP1090_VERSION=\"$(DUMP1090_VERSION)\" -DMODES_DUMP1090_VARIANT=\"dump1090-fa\"
 
@@ -206,16 +206,16 @@ showconfig:
 	$(CC) $(ALL_CCFLAGS) -c $< -o $@
 
 dump1090: dump1090.o anet.o interactive.o mode_ac.o mode_s.o comm_b.o net_io.o crc.o demod_2400.o stats.o cpr.o icao_filter.o track.o util.o convert.o ais_charset.o adaptive.o $(SDR_OBJ) $(COMPAT) $(CPUFEATURES_OBJS) $(STARCH_OBJS)
-	$(CC) -g -o $@ $^ $(LDFLAGS) $(LIBS) $(LIBS_SDR) $(LIBS_CURSES)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS) $(LIBS_SDR) $(LIBS_CURSES)
 
 view1090: view1090.o anet.o interactive.o mode_ac.o mode_s.o comm_b.o net_io.o crc.o stats.o cpr.o icao_filter.o track.o util.o ais_charset.o sdr_stub.o $(COMPAT)
-	$(CC) -g -o $@ $^ $(LDFLAGS) $(LIBS) $(LIBS_CURSES)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS) $(LIBS_CURSES)
 
 faup1090: faup1090.o anet.o mode_ac.o mode_s.o comm_b.o net_io.o crc.o stats.o cpr.o icao_filter.o track.o util.o ais_charset.o sdr_stub.o $(COMPAT)
-	$(CC) -g -o $@ $^ $(LDFLAGS) $(LIBS)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 starch-benchmark: cpu.o dsp/helpers/tables.o $(CPUFEATURES_OBJS) $(STARCH_OBJS) $(STARCH_BENCHMARK_OBJ)
-	$(CC) -g -o $@ $^ $(LDFLAGS) $(LIBS)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 clean:
 	rm -f *.o oneoff/*.o compat/clock_gettime/*.o compat/clock_nanosleep/*.o cpu_features/src/*.o dsp/generated/*.o dsp/helpers/*.o $(CPUFEATURES_OBJS) dump1090 view1090 faup1090 cprtests crctests oneoff/convert_benchmark oneoff/decode_comm_b oneoff/dsp_error_measurement oneoff/uc8_capture_stats starch-benchmark
@@ -224,25 +224,25 @@ test: cprtests
 	./cprtests
 
 cprtests: cpr.o cprtests.o
-	$(CC) $(ALL_CCFLAGS) -g -o $@ $^ -lm
+	$(CC) $(ALL_CCFLAGS) -o $@ $^ -lm
 
 crctests: crc.c crc.h
-	$(CC) $(ALL_CCFLAGS) -g -DCRCDEBUG -o $@ $<
+	$(CC) $(ALL_CCFLAGS) -DCRCDEBUG -o $@ $<
 
 benchmarks: oneoff/convert_benchmark
 	oneoff/convert_benchmark
 
 oneoff/convert_benchmark: oneoff/convert_benchmark.o convert.o util.o dsp/helpers/tables.o cpu.o $(CPUFEATURES_OBJS) $(STARCH_OBJS)
-	$(CC) $(ALL_CCFLAGS) -g -o $@ $^ -lm -lpthread
+	$(CC) $(ALL_CCFLAGS) -o $@ $^ -lm -lpthread
 
 oneoff/decode_comm_b: oneoff/decode_comm_b.o comm_b.o ais_charset.o
-	$(CC) $(ALL_CCFLAGS) -g -o $@ $^ -lm
+	$(CC) $(ALL_CCFLAGS) -o $@ $^ -lm
 
 oneoff/dsp_error_measurement: oneoff/dsp_error_measurement.o dsp/helpers/tables.o cpu.o $(CPUFEATURES_OBJS) $(STARCH_OBJS)
-	$(CC) $(ALL_CCFLAGS) -g -o $@ $^ -lm
+	$(CC) $(ALL_CCFLAGS) -o $@ $^ -lm
 
 oneoff/uc8_capture_stats: oneoff/uc8_capture_stats.o
-	$(CC) $(ALL_CCFLAGS) -g -o $@ $^ -lm
+	$(CC) $(ALL_CCFLAGS) -o $@ $^ -lm
 
 starchgen:
 	dsp/starchgen.py .
