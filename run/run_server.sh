@@ -1,4 +1,4 @@
 #! /bin/bash
-cd dump1090
+cd ..
 cd public_html
 python -m http.server 80

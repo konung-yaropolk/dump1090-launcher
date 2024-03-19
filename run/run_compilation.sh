@@ -1,5 +1,5 @@
 #! /bin/bash
-cd dump1090
+cd ..
 
 # RTLSDR=no    will disable rtl-sdr support and remove the dependency on librtlsdr.
 # HACKRF=no    will disable HackRF support and remove the dependency on libhackrf.
